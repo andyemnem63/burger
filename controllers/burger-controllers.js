@@ -10,13 +10,13 @@ router.get("/", function(req, res) {
         var hbsObject = {
             foods: data
         };
-        console.log(hbsObject);
+        // console.log(hbsObject);
         res.render("index", hbsObject);
     });
 });
 
 router.post("/", function(req, res) {
-    console.log('The Request is', req.body);
+    // Colums, [forminput, boolean = false;
     food.insertOne(["burger_name", "devoured"], [req.body.burger_name, "0"], function() {
         res.redirect("/");
     });

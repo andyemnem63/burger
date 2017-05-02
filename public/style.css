@@ -1,0 +1,32 @@
+body {
+/*	margin: 0;
+	padding: 0;*/
+}
+.container {
+	height: 100%;
+	width: 100%;
+}
+.container-top {
+	text-align: center;
+}
+.container-left {
+    border: 5px dotted red;
+	width: 32%;
+	height: 100%;
+	background-color: orange;
+	float: left;
+}
+.container-middle {
+	border: 5px dotted red;
+	float: left;
+	width: 33%;
+	height: 100%;
+	background-color: green;
+}
+.container-right {
+border: 5px dotted red;
+float:left;
+width: 32%;
+height: 100%;
+background-color: orange;
+}
