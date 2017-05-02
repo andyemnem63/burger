@@ -69,7 +69,14 @@ var orm = {
       if (err) {
         throw err;
       }
-
+      cb(result);
+    });
+  },
+  deleteOne: function(table,condition, cb) {
+    var query = "DELETE FROM " + table + " WHERE "+ condition;
+    console.log("This is the query", query);
+    connection.query(query, function(err, result){
+      if(err) throw err;
       cb(result);
     });
   }

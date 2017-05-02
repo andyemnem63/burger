@@ -25,13 +25,20 @@ router.post("/", function(req, res) {
 router.put("/:id", function(req, res) {
     var condition = "id = " + req.params.id;
 
-    console.log("condition", condition);
+     console.log("condition", condition);
 
     food.updateOne({
         devoured: req.body.devoured
-    }, condition, function() {
+                }, condition, function() {
         res.redirect("/");
     });
+});         
+router.delete('/:id', function(req, res) {
+                var condition = "id = " + req.params.id;
+    console.log("condition", condition);
+        
+    food.deleteOne(condition, function() {
+        res.redirect('/');
+    });
 });
-
 module.exports = router;
