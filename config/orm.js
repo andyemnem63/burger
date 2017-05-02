@@ -1,32 +1,79 @@
-// Get the connection to mysql 
-let connection = require('./connection');
+// Import MySQL connection.
+let connection = require('../config/connection.js');
+// Object for all our SQL statement functions.
 
+// Helper function for SQL syntax.
+function printQuestionMarks(num) {
+  var arr = [];
 
-	// Show everything from table
-	let selectAll () => {
-	  connection.query("SELECT * FROM burgerstable;", (err,data) => {
-	    if (err) {
-	      throw err;
-	    }
-	  });
-	}
+  for (var i = 0; i < num; i++) {
+    arr.push("?");
+  }
+  return arr.toString();
+}
 
-	// Inserts into table
-	let insertOne () => {
-		let query = //Something; 
-	  connection.query('INSERT INTO burgerstable (burger_name) VALUES (?)', [query],, (err,data) => {
-	    if (err) {
-	      throw err;
-	    }
-	  });
-	}
+// Helper function for SQL syntax.
+function objToSql(ob) {
+  var arr = [];
 
-	// Update table
-	let updateOne () => {
-		let query = //Something;
-	  connection.query('UPDATE plans SET plan = ? WHERE id = ?', [query,query],(err,data) => {
-	    if (err) {
-	      throw err;
-	    }
-	  });
-	}
+  for (var key in ob) {
+    if (Object.hasOwnProperty.call(ob, key)) {
+      arr.push(key + "=" + ob[key]);
+    }
+  }
+
+  return arr.toString();
+}
+
+// Object for all our SQL statement functions.
+var orm = {
+  selectAll: function(tableInput, cb) {
+    var queryString = "SELECT * FROM " + tableInput + ";";
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
+  insertOne: function(table, cols, vals, cb) {
+    var queryString = "INSERT INTO " + table;
+    // INSER INTO table_name (burger_name) VALUES (?, ?)
+    queryString += " (";
+    queryString += cols.toString();
+    queryString += ") ";
+    queryString += "VALUES (";
+    queryString += printQuestionMarks(vals.length);
+    queryString += ") ";
+
+    console.log(queryString);
+
+    connection.query(queryString, vals, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
+  // An example of objColVals would be {name: panther, sleepy: true}
+  updateOne: function(table, objColVals, condition, cb) {
+    var queryString = "UPDATE " + table;
+
+    queryString += " SET ";
+    queryString += objToSql(objColVals);
+    queryString += " WHERE ";
+    queryString += condition;
+
+    console.log(queryString);
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  }
+};
+
+// Export the orm object for the model (cat.js).
+module.exports = orm;
