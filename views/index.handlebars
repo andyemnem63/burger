@@ -35,7 +35,7 @@
             <h2>Add a burger</h2>
             <form class="create-update-form" action="/" method="POST">
               <div class="form-group">
-                <label for="ca">burger Name:</label>
+                <label for="ca">Burger Name:</label>
                 <input type="text" id="ca" name="burger_name">
               </div>
               <button type="submit">Add burger</button>
@@ -44,17 +44,19 @@
 
         <div class="container-right">
             <h2>Devoured</h2>
-            <ul class="foodList">
-              {{#each foods}}
-                {{#if this.devoured}}
-                  <li>
-                    {{this.burger_name}}
-
-                    <form action="/{{this.id}}?_method=DELETE" method="POST">
-                      <input type="hidden" name="id" value="{{this.id}}">
-                      <button type="submit">Delete</button>
-                    </form>
-                  </li>
+              <table class ="table">
+                <thead>
+                  {{#each foods}}
+                    {{#if this.devoured}}
+                      <tr>
+                        {{this.burger_name}}
+                        <form action="/{{this.id}}?_method=DELETE" method="POST">
+                          <input type="hidden" name="id" value="{{this.id}}">
+                          <button type="submit">Delete</button>
+                        </form>
+                      <tr>
+                      <br><br>
+                  </thread>
                 {{/if}}
               {{/each}}
             </ul>
