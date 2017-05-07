@@ -1,25 +1,34 @@
-<div class="container">
-    
     <div class="container-top">
-        <h1>Burger!!</h1>
+        <h1>Menu</h1>
     </div>
 
       <div class='container-left'>
         <h2>Not devoured</h2>
-          <ul>
-            {{#each foods}}
-              {{#unless this.devoured}}
-                <li>
-                  {{this.burger_name}}
-
-                  <form action="/{{this.id}}?_method=PUT" method="POST">
-                    <input type="hidden" name="devoured" value="true">
-                    <button type="submit">Devour it!</button>
-                  </form>
-                </li>
-              {{/unless}}
-            {{/each}}
-          </ul>
+          <table class ="table">
+            <thead>
+                  <tr>
+                      <th>Not devoured</th>
+                      <th>Devour it</th>
+                  </tr>
+              </thead>
+                <tbody>
+                  <tr>
+                      {{#each foods}}
+                      {{#unless this.devoured}}
+                        <td>
+                          {{this.burger_name}}
+                        </td>
+                        <td>
+                            <form action="/{{this.id}}  ?_method=PUT" method="POST">
+                            <input type="hidden" name="devoured" value="true">
+                            <button type="submit">Devour it!</button>
+                            </form>
+                        </td>
+                  </tr>
+                  {{/unless}}
+                {{/each}}
+              </tbody>
+            </table>
       </div>
 
       <div class="container-middle">
@@ -35,7 +44,7 @@
 
         <div class="container-right">
             <h2>Devoured</h2>
-            <ul>
+            <ul class="foodList">
               {{#each foods}}
                 {{#if this.devoured}}
                   <li>
@@ -53,4 +62,3 @@
 
 
 
-</div>
