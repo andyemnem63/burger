@@ -7,6 +7,7 @@ let express = require('express'),
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
     food.selectAll(function(data) {
+        console.log(data);
         var hbsObject = {
             foods: data
         };
