@@ -16,7 +16,6 @@ else {
     });
 };
 
-
 // Establish connection 
 connection.connect(function(err) {
     if (err) {
