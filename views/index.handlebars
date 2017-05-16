@@ -6,8 +6,8 @@
           <table class ="table">
             <thead>
                   <tr>
-                      <th>Not devoured</th>
-                      <th>Devour it</th>
+                      <th class="titleCenter">Not devoured</th>
+                      <th class="titleCenter">Devour it</th>
                   </tr>
               </thead>
                 <tbody>
@@ -20,7 +20,7 @@
                         <td>
                             <form action="/{{this.id}}  ?_method=PUT" method="POST">
                             <input type="hidden" name="devoured" value="true">
-                            <button type="submit">Devour it!</button>
+                            <button class="btnColor" type="submit">Devour it!</button>
                             </form>
                         </td>
                   </tr>
@@ -37,7 +37,7 @@
                 <label for="ca">Burger Name:</label>
                 <input type="text" id="ca" name="burger_name">
               </div>
-              <button type="submit">Add burger</button>
+              <button class="btnColor" type="submit">Add burger</button>
           </form>
       </div>
 
@@ -51,7 +51,7 @@
                         {{this.burger_name}}
                         <form action="/{{this.id}}?_method=DELETE" method="POST">
                           <input type="hidden" name="id" value="{{this.id}}">
-                          <button type="submit">Delete</button>
+                          <button class="btnColor" type="submit">Delete</button>
                         </form>
                       <tr>
                       <br><br>

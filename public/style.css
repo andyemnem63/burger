@@ -1,13 +1,18 @@
-html {
-	height: 100%;
-}
 * {
 	margin: 0;
 	padding: 0;
+    font-weight: bold;
+    color: white; 
 }
 body {
-	min-height: 100%;
+    min-height: 100%;
     text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/img2.jpg);
+    background-size: cover;
+}
+
+.btnColor {
+    color: black;
 }
 /*Header*/
 .container-top {
@@ -27,6 +32,9 @@ body {
     height: 100%;
     float: left;
 }
+.titleCenter  {
+    text-align: center;
+}
 /*Add a burger*/
 .container-middle {
     border: 1px solid;
@@ -41,3 +49,4 @@ body {
     width: 33.33%;
     height: 100%;
 }
+
