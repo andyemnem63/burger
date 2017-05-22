@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
     font-weight: bold;
-    color: white; 
+    color: black;
 }
 body {
     min-height: 100%;
@@ -23,7 +23,7 @@ body {
     border-width: 10px;
     border-bottom-style: solid;
     width: 100px;
-    margin: 50px auto; 
+    margin: 50px auto;
 }
 /*Not Devoured*/
 .container-left {
@@ -49,4 +49,3 @@ body {
     width: 33.33%;
     height: 100%;
 }
-
