@@ -1,27 +1,27 @@
 * {
-	margin: 0;
-	padding: 0;
-  font-weight: bold;
-  color: white;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    font-family: 'Averia Serif Libre', cursive;
 }
 body {
     min-height: 100%;
     text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/img2.jpg);
+    background: url(images/img2.jpg);
     background-size: cover;
 }
 
 .btnColor {
     color: black;
 }
+
 /*Header*/
 .container-top {
     text-align: center;
 }
 .container-top h1 {
-    border-top-style: solid;
-    border-width: 10px;
-    border-bottom-style: solid;
     width: 100px;
     margin: 50px auto;
 }
@@ -42,8 +42,12 @@ body {
     width: 33.33%;
     height: 100%;
 }
+
+#burgerInput {
+    color: black;
+}
 #ca {
-	color: black;
+    color: black;
 }
 /*Devoured*/
 .container-right {
@@ -51,4 +55,23 @@ body {
     float: right;
     width: 33.33%;
     height: 100%;
+}
+
+.section {
+    background: rgba(46, 32, 32, 0.71);
+    border: 1px solid white;
+}
+table {
+    margin: 0 auto;
+}
+
+.devoured {
+    width: 500px;
+    height: 500px;
+    float: left;
+}
+.notDevoured {
+    width: 500px;
+    height: 500px;
+    float: right;
 }
