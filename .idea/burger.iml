@@ -4,5 +4,8 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="phpCRUD" />
+    <orderEntry type="module" module-name="404-not-found" />
+    <orderEntry type="module" module-name="gotchu" />
   </component>
 </module>

@@ -33,7 +33,8 @@ router.put("/:id", function(req, res) {
                 }, condition, function() {
         res.redirect("/");
     });
-});         
+});  
+       
 router.delete('/:id', function(req, res) {
                 var condition = "id = " + req.params.id;
     console.log("condition", condition);

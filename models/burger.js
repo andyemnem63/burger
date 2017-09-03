@@ -1,5 +1,5 @@
 // Require modules and packages
-let orm = require('../config/orm.js');
+var orm = require('../config/orm.js');
 
 var food = {
   selectAll: function(cb) {

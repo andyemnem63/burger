@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../404-not-found/.idea/404-not-found.iml" filepath="$PROJECT_DIR$/../404-not-found/.idea/404-not-found.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/burger.iml" filepath="$PROJECT_DIR$/.idea/burger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../Programming/gotchu/.idea/gotchu.iml" filepath="$PROJECT_DIR$/../../../Programming/gotchu/.idea/gotchu.iml" />
+      <module fileurl="file://C:\Users\ae1\Desktop\php\phpCRUD\.idea\phpCRUD.iml" filepath="C:\Users\ae1\Desktop\php\phpCRUD\.idea\phpCRUD.iml" />
     </modules>
   </component>
 </project>
